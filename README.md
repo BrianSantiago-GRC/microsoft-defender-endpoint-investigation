@@ -1,3 +1,17 @@
+<!-- recruiter-review:start -->
+## Recruiter Quick Review
+
+**Best-fit roles:** IT Support Specialist, Desktop Support, Endpoint Support, Security Support, Junior SOC Analyst, Microsoft security support, incident documentation support.
+
+**What this proves:** I can validate endpoint security posture, collect Windows/Defender evidence, review Event Viewer signals, write an investigation timeline, and document remediation recommendations from an IT support foundation.
+
+**Search keywords:** Microsoft Defender, Windows Security, endpoint security, Event Viewer, PowerShell, incident response, endpoint investigation, Windows 10/11, remediation, SOC, security support, documentation, IT support.
+
+**Start here:** [RECRUITER_REVIEW.md](RECRUITER_REVIEW.md)
+
+**Honest scope:** Portfolio endpoint investigation walkthrough using built-in Windows and Defender evidence. This does not claim advanced EDR administration, malware reverse engineering, or senior threat hunting.
+<!-- recruiter-review:end -->
+
 # Microsoft Defender Endpoint Investigation Walkthrough
 
 ## Purpose
