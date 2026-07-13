@@ -1,90 +1,41 @@
-<!-- recruiter-review:start -->
-## Recruiter Quick Review
+# Windows Defender Endpoint Review
 
-**Best-fit roles:** IT Support Specialist, Desktop Support, Endpoint Support, Security Support, Junior SOC Analyst, Microsoft security support, incident documentation support.
+**A Windows endpoint-posture and evidence-collection walkthrough built from an IT support investigation sequence.**
 
-**What this proves:** I can validate endpoint security posture, collect Windows/Defender evidence, review Event Viewer signals, write an investigation timeline, and document remediation recommendations from an IT support foundation.
+## Problem, Action, Result
 
-**Search keywords:** Microsoft Defender, Windows Security, endpoint security, Event Viewer, PowerShell, incident response, endpoint investigation, Windows 10/11, remediation, SOC, security support, documentation, IT support.
+**Problem:** A user report or endpoint concern needs a quick, defensible baseline before an analyst can decide whether to remediate, escalate, or collect more evidence.
 
-**Start here:** [RECRUITER_REVIEW.md](RECRUITER_REVIEW.md)
+**Action:** I checked Windows Security status, captured `Get-MpComputerStatus` output, reviewed Event Viewer surfaces, and organized the work into an analyst timeline and remediation checklist.
 
-**Honest scope:** Portfolio endpoint investigation walkthrough using built-in Windows and Defender evidence. This does not claim advanced EDR administration, malware reverse engineering, or senior threat hunting.
-<!-- recruiter-review:end -->
+**Result:** The repository shows a repeatable endpoint-review sequence and clear handoff documentation. The captured system showed no active threat; this is not a claim that malware was found, contained, or eradicated.
 
-# Microsoft Defender Endpoint Investigation Walkthrough
+## 90-Second Review
 
-## Purpose
+1. Inspect the [Windows Security status](screenshots/01-windows-security-defender-status.png).
+2. Review the [`Get-MpComputerStatus` evidence](evidence/powershell-output.md).
+3. Read the [Event Viewer review](evidence/event-viewer-review.md).
+4. Follow the [investigation timeline](docs/investigation-timeline.md) and [remediation recommendations](docs/remediation-recommendations.md).
 
-This project documents a realistic endpoint investigation workflow using built-in Windows security evidence, Microsoft Defender status checks, Event Viewer review, and clear remediation notes.
+## Evidence Map
 
-The goal is to show how IT support troubleshooting translates into junior security operations work without overstating experience or claiming advanced EDR administration.
-
-## Scope
-
-- Windows Security / Microsoft Defender status review
-- PowerShell Defender status output
-- Event Viewer evidence review
-- Basic endpoint investigation timeline
-- Containment and remediation recommendations
-- Lessons learned
-
-## Tools Used
-
-- Windows Security
-- Microsoft Defender Antivirus
-- PowerShell
-- Event Viewer
-- Markdown documentation
-- Sanitized screenshots
+| Evidence | What it shows | Boundary |
+|---|---|---|
+| [Windows Security](screenshots/01-windows-security-defender-status.png) | Built-in endpoint protection status | Posture check, not an EDR alert |
+| [PowerShell status](screenshots/02-defender-powershell-status.png) | Defender configuration and health fields | Point-in-time local output |
+| [Security event log](screenshots/03-event-viewer-security-log.png) | Windows Security log review surface | No malware event is claimed |
+| [System/Application log](screenshots/04-event-viewer-system-or-application-log.png) | Supporting event-review surface | Context gathering, not root-cause proof |
+| [Timeline](screenshots/05-investigation-timeline.png) | Rendered Markdown investigation sequence | Documentation artifact, not a live incident console |
+| [Recommendations](screenshots/06-remediation-recommendations.png) | Rendered action and escalation checklist | Proposed steps, not completed containment |
 
 ## Skills Demonstrated
 
-- Endpoint security awareness
-- Defender status validation
-- Windows event review
-- Evidence collection
-- Incident note writing
-- Containment recommendation writing
-- IT support to security operations transfer
+Windows 10/11 | Windows Security | Microsoft Defender Antivirus | PowerShell | Event Viewer | endpoint triage | evidence capture | escalation notes | remediation planning | technical documentation
 
-## Evidence Included
+## Scope Boundary
 
-| Evidence | Target File |
-|---|---|
-| Windows Security / Defender status screenshot | `screenshots/01-windows-security-defender-status.png` |
-| PowerShell `Get-MpComputerStatus` output | `screenshots/02-defender-powershell-status.png` |
-| Event Viewer Security log screenshot | `screenshots/03-event-viewer-security-log.png` |
-| Event Viewer System or Application log screenshot | `screenshots/04-event-viewer-system-or-application-log.png` |
-| Investigation timeline screenshot or markdown evidence | `screenshots/05-investigation-timeline.png` |
-| Remediation recommendations screenshot or markdown evidence | `screenshots/06-remediation-recommendations.png` |
+This project uses built-in Windows and Defender Antivirus evidence. It does not demonstrate Microsoft Defender for Endpoint administration, live EDR alert triage, malware reverse engineering, threat hunting, or production incident containment.
 
-## Screenshot Preview
+## Interview Summary
 
-![Windows Security Defender status](screenshots/01-windows-security-defender-status.png)
-
-![Defender PowerShell status](screenshots/02-defender-powershell-status.png)
-
-![Event Viewer Security log](screenshots/03-event-viewer-security-log.png)
-
-![Investigation timeline](screenshots/05-investigation-timeline.png)
-
-## Documentation
-
-- `evidence/defender-status.md`
-- `evidence/powershell-output.md`
-- `evidence/event-viewer-review.md`
-- `docs/investigation-timeline.md`
-- `docs/remediation-recommendations.md`
-- `docs/lessons-learned.md`
-
-## Scope Boundaries
-
-- Do not claim Microsoft Defender for Endpoint administration unless Defender for Endpoint was actually used.
-- Do not download malware.
-- Do not run attack tools.
-- Do not claim advanced EDR, malware reverse engineering, threat hunting, or detection engineering.
-
-## Interview Talking Point
-
-This project shows how I validate endpoint security posture, collect Windows evidence, review logs, document findings, and recommend containment or remediation steps using tools common in IT support and security operations.
+> I used a support-first sequence: confirm endpoint protection status, capture PowerShell health data, review relevant Windows logs, separate observed facts from assumptions, and document the next action. The system showed no active threat, so I treated the result as a posture baseline rather than inventing an incident.
